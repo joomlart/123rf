@@ -1,0 +1,21 @@
+#sbox-window.ja123rf-window {
+    background-color: #111;
+    padding: 0 !important;
+    top: 5% !important;
+    left: 5% !important;
+    right: 5% !important;
+    bottom: 5% !important;
+    height: auto !important;
+    width: auto !important;
+    position: fixed;
+}
+
+#sbox-window.ja123rf-window #sbox-content {
+    position: relative;
+}
+
+#sbox-window.ja123rf-window iframe {
+    background-color: #111;
+    width: 100%;
+    height: 100%;
+}

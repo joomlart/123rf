@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="editors-xtd" method="upgrade">
+	<name>Editor Button - 123rf</name>
+	<creationDate>Aug 2015</creationDate>
+	<author>JoomlArt.com</author>
+	<copyright>Copyright (C), J.O.O.M Solutions Co., Ltd. All Rights Reserved.</copyright>
+	<license>GNU/GPL V3</license>
+	<authorEmail>webmaster@joomlart.com</authorEmail>
+	<authorUrl>www.joomlart.com</authorUrl>
+	<version>1.0.0</version>
+	<description>
+	<![CDATA[
+
+	]]>
+	</description>
+	<files>
+		<filename plugin="123rfbutton">123rfbutton.php</filename>
+    <folder>assets</folder>
+		<filename>index.html</filename>
+	</files>
+
+    <languages>
+		<language tag="en-GB">language/en-GB/en-GB.plg_editors-xtd_123rfbutton.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.plg_editors-xtd_123rfbutton.sys.ini</language>
+	</languages>
+
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field name="apikey"
+                    type="password"
+                    default=""
+                    label="PLG_JA_123RF_APIKEY"
+                    description="PLG_JA_123RF_APIKEY_DESC" />
+                <field name="custid"
+                    type="password"
+                    default=""
+                    label="PLG_JA_123RF_CUSTID"
+                    description="PLG_JA_123RF_CUSTID_DESC" />
+                <field name="secretkey"
+                    type="password"
+                    default=""
+                    label="PLG_JA_123RF_SECRETKEY"
+                    description="PLG_JA_123RF_SECRETKEY_DESC"/>
+                <field name="accesskey"
+                    type="password"
+                    default=""
+                    label="PLG_JA_123RF_ACCESSKEY"
+                    description="PLG_JA_123RF_ACCESSKEY_DESC" />
+                <field name="local_save"
+                    type="text"
+                    default="images/ja123rf"
+                    label="PLG_JA_123RF_LOCAL_SAVE_IMAGES"
+                    description="PLG_JA_123RF_LOCAL_DESC" />
+            </fieldset>
+        </fields>
+    </config>
+</extension>

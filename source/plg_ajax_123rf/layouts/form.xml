@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fields>
+        <fieldset name="search">
+            <field name="ja123rf-params-keyword"
+                   type="text"
+                   required="true"
+                   onchange="ja123rf_search();"
+                   label="Keywords"
+                   default=""/>
+
+            <field name="ja123rf-params-media_type"
+                   type="list"
+                   default="all"
+                   onchange="ja123rf_search_all();"
+                   label="Media Type"
+                   description="">
+                   
+                <option value="all">All Images</option>
+                <option value="0">Photography</option>
+                <option value="1">Vector Illustration</option>
+                <option value="4">Editorial</option>
+            </field>
+            <field name="ja123rf-params-orderby"
+                   type="list"
+                   default="random"
+                   onchange="ja123rf_search_all();"
+                   label="Order By"
+                   description="">
+
+                <option value="latest">Latest</option>
+                <option value="most_downloaded">Most Downloaded</option>
+                <option value="random">Random</option>
+            </field>
+        </fieldset>
+
+        <fieldset name="filter">
+
+            <field name="ja123rf-params-category"
+                   type="list"
+                   default=""
+                   onchange="ja123rf_search();"
+                   label="Category"
+                   description="">
+                
+                <option value="">Any</option>    
+                <option value="1">Animals &amp; Pets</option>
+                <option value="2">Arts &amp; Architecture</option>
+                <option value="3">Celebration &amp; Holidays</option>
+                <option value="4">Babies &amp; Kis</option>
+                <option value="5">Background &amp; Graphics</option>
+                <option value="6">Business - Man</option>
+                <option value="7">Business - Woman</option>
+                <option value="8">Concepts &amp; Stills</option>
+                <option value="9">Couples &amp; Families</option>
+                <option value="10">Fruits, Food &amp; Drinks</option>
+                <option value="11">Beauty</option>
+                <option value="12">Illustrations</option>
+                <option value="13">Seniors</option>
+                <option value="14">Nature</option>
+                <option value="15">People - Lifestyle</option>
+                <option value="16">Science &amp; Technology</option>
+                <option value="17">Sports &amp; Leisure</option>
+                <option value="18">Transportation &amp; Industry</option>
+                <option value="19">Lanscapes &amp; Travel</option>
+                <option value="20">Health &amp; Medical</option>
+                <option value="21">Education</option>
+                <option value="22">Teenagers</option>
+                <option value="23">Weddings &amp; Matrimony</option>
+                <option value="24">Feelings &amp; Emotions</option>
+                <option value="25">Fitness &amp; Wellness</option>
+                <option value="26">Home Improvement</option>
+                <option value="27">Pregnancy &amp; Maternity</option>
+                <option value="28">Dating &amp; Romance</option>
+                <option value="29">Mobile &amp; Telecommunical</option>
+                <option value="30">Objects &amp; Ornament</option>
+                <option value="31">Business - Concept</option>
+                <option value="32">Animals &amp; Pets</option>
+            </field>
+
+            <field name="ja123rf-params-people_gender"
+                   type="radio"
+                   default="0"
+                   onchange="search();"
+                   label="Gender"
+                   description="">
+
+                <option value="0">Any</option>
+                <option value="1">Male</option>
+                <option value="2">Female</option>
+            </field>
+
+            <field name="ja123rf-params-orientation"
+                   type="checkboxes"
+                   class="checkbox"
+                   default=""
+                   onchange="search();"
+                   label="Orientation"
+                   description="">
+
+                <option value="horizontal">Horizontal</option>
+                <option value="vertical">Portrait</option>
+                <option value="square">Square</option>
+            </field>
+
+            <field name="ja123rf-params-model-preference"
+                   type="checkboxes"
+                   class="checkbox"
+                   default=""
+                   onchange="search();"
+                   label="Model Preference"
+                   description="">
+
+                <option value="caucasian">Caucasian</option>
+                <option value="african_american">African American</option>
+                <option value="asian">Asian</option>
+                <option value="hispanic">Hispanic</option>
+            </field>
+
+            <field name="ja123rf-params-people_count"
+                   type="checkboxes"
+                   class="checkbox"
+                   default=""
+                   onchange="search();"
+                   label="Number of People"
+                   descriptions="">
+
+                <option value="n">Without People</option>
+                <option value="1">1 People</option>
+                <option value="2">2 People</option>
+                <option value="3">3 People</option>
+                <option value="4">4 People</option>
+            </field>
+
+            <field name="ja123rf-params-people_age"
+                   type="checkboxes"
+                   class="checkbox"
+                   default=""
+                   onchange="search();"
+                   label="Age"
+                   description="">
+
+                <option value="1">Babies</option>
+                <option value="2">Children</option>
+                <option value="3">Teenagers</option>
+                <option value="4">Adults</option>
+                <option value="5">Seniors</option>
+            </field>
+            <field name="ja123rf-params-color"
+                type="radio"
+                default=""
+                label="Color"
+                description="">
+                
+                <option value="" class="ja123rf-color c"></option>
+                <option value="0" class="ja123rf-color c0">0</option>
+                <option value="1" class="ja123rf-color c1">1</option>
+                <option value="2" class="ja123rf-color c2">2</option>
+                <option value="3" class="ja123rf-color c3">3</option>
+                <option value="4" class="ja123rf-color c4">4</option>
+                <option value="5" class="ja123rf-color c5">5</option>
+                <option value="6" class="ja123rf-color c6">6</option>
+                <option value="7" class="ja123rf-color c7">7</option>
+                <option value="8" class="ja123rf-color c8">8</option>
+                <option value="9" class="ja123rf-color c9">9</option>
+                <option value="10" class="ja123rf-color c10">10</option>
+                <option value="11" class="ja123rf-color c11">11</option>
+                <option value="12" class="ja123rf-color c12">12</option>
+                <option value="13" class="ja123rf-color c13">13</option>
+                <option value="14" class="ja123rf-color c14">14</option>
+                <option value="15" class="ja123rf-color c15">15</option>
+                <option value="16" class="ja123rf-color c16">16</option>
+                <option value="17" class="ja123rf-color c17">17</option>
+                <option value="18" class="ja123rf-color c18">18</option>
+                <option value="19" class="ja123rf-color c19">19</option>
+                <option value="20" class="ja123rf-color c20">20</option>
+                <option value="21" class="ja123rf-color c21">21</option>
+                <option value="22" class="ja123rf-color c22">22</option>
+                <option value="23" class="ja123rf-color c23">23</option>
+                <option value="24" class="ja123rf-color c24">24</option>
+                <option value="25" class="ja123rf-color c25">25</option>
+                <option value="26" class="ja123rf-color c26">26</option>
+                <option value="27" class="ja123rf-color c27">27</option>
+                <option value="28" class="ja123rf-color c28">28</option>
+                <option value="29" class="ja123rf-color c29">29</option>
+                <option value="30" class="ja123rf-color c30">30</option>
+                <option value="31" class="ja123rf-color c31">31</option>
+                <option value="32" class="ja123rf-color c32">32</option>
+                <option value="33" class="ja123rf-color c33">33</option>
+                <option value="34" class="ja123rf-color c34">34</option>
+                <option value="35" class="ja123rf-color c35">35</option>
+                <option value="36" class="ja123rf-color c36">36</option>
+                <option value="37" class="ja123rf-color c37">37</option>
+                <option value="38" class="ja123rf-color c38">38</option>
+            </field>
+
+        </fieldset>
+    </fields>
+</form>
