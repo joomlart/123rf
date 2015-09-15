@@ -3,23 +3,6 @@
  *
  */
 
-/*
- ================================================
- TABLE OF CONTENT
- ================================================
-
- * RESET
- * COMMON STYLE
- * OVERRIDE
- * IMAGE LIST PLUGIN
- * HEADER SECTION
- * CONTENT SECTION
- * DOWNLOAD PAGE
- * SEARCH PAGE
-
- ================================================
- */
-
 /************************************************
  * RESET
  ************************************************
@@ -70,7 +53,6 @@ select {
  */
 
 /* Overall */
-
 .ja123rf-wrapper {
   height: 100%;
   background-color: #111;
@@ -78,16 +60,15 @@ select {
 }
 
 /* Image Type */
-
 .type {
+  border-radius: 2px;
+  color: #fff;
   float: right;
-  padding: 0 6px;
   font-size: 9px;
   font-weight: bold;
+  padding: 0 6px;
   text-decoration: none;
   text-transform: uppercase;
-  border-radius: 3px;
-  color: #fff;
 }
 
 .tiff {
@@ -99,7 +80,6 @@ select {
 }
 
 /* Button */
-
 .btn-hide {
   float: left;
 }
@@ -120,21 +100,22 @@ select {
 }
 
 .btn-close {
-  width: 45px;
-  height: 45px;
-  background: #353535 url(../images/btn-close.png) no-repeat 15px 14px;
-  padding-right: 2px;
-  position: absolute;
-  top: 15px;
-  right: 15px;
+  background: url(../images/btn-close.png) no-repeat 15px 14px;
   border-radius: 50%;
   color: #fff;
   cursor: pointer;
+  height: 45px;
+  padding-right: 2px;
+  position: absolute;
+  top: 25px;
+  right: 10px;
+  opacity: 0.2;
+  width: 45px;
+  transition: opacity 0.35s;
 }
 
 .btn-close:hover {
-  background-color: #ff5f58;
-  transition: background-color 100ms ease;
+  opacity: 1;
 }
 
 #ja123rf-loading {
@@ -159,7 +140,6 @@ select {
 }
 
 /* Others */
-
 .fullwidth {
   width: 100%;
 }
@@ -338,7 +318,7 @@ select {
 .btn-info {
   background-image: none;
   border: 0;
-  border-radius: 3px;
+  border-radius: 2px;
   box-shadow: none;
   text-shadow: none;
   line-height: 22px;
@@ -355,19 +335,16 @@ select {
 }
 
 /* Modal */
-
 .modal {
   display: none;
 }
 
 /* Bootstrap Disabled */
-
 .disabled {
   background-color: #aaa !important;
 }
 
 /* Chosen Dropdown */
-
 .chzn-container .chzn-single {
   width: 100px;
   height: 24px;
@@ -436,13 +413,11 @@ select {
 }
 
 /* Custom for Control Search */
-
 .control-search .chzn-container-single .chzn-search {
   display: none;
 }
 
 /* Custome for Control Filter*/
-
 .control-filter .chzn-container .chzn-single {
   width: 100%;
   padding: 3px 0;
@@ -480,7 +455,6 @@ select {
 
 .img-wrap-container {
   background-color: #eee;
-  padding: 5px;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -490,16 +464,20 @@ select {
 }
 
 .img-wrap {
+  box-sizing: border-box;
   width: 100%;
   height: 100%;
   position: relative;
+  padding: 10px 20px 10px 10px;
   font-size: 0;
   overflow-x: hidden;
   overflow-y: scroll;
 }
 
 .img-wrap-inner {
+  box-sizing: border-box;
   height: 100%;
+  padding-right: 34px;
 }
 
 .img-item {
@@ -508,26 +486,29 @@ select {
 }
 
 .img-item a {
-  background-color: #eee;
   position: relative;
   display: block;
   padding: 0;
+  transition: all 0.35s;
 }
 
 .img-item a:hover {
   background-color: #aaa;
-  display: block;
-  transition: background-color 100ms ease;
+}
+
+.img-item.active a {
+  background-color: #4a911c;
 }
 
 .img-item.active a::before {
-  content: "";
   background: url(../images/arrow-detail.png) no-repeat;
-  width: 35px;
-  height: 20px;
+  bottom: -16px;
+  content: "";
+  height: 8px;
+  left: 50%;
   position: absolute;
-  left: 43%;
-  bottom: -8px;
+  margin-left: -17px;
+  width: 35px;
   z-index: 99;
 }
 
@@ -537,17 +518,20 @@ select {
 }
 
 /* Image Details */
-
 .img-container {
-  background-color: #222;
+  overflow: hidden;
 }
 
 .img-detail {
-  width: 800px;
   background-color: #222;
+  margin-top: 16px;
+}
+
+.img-detail-inner {
+  color: #eee;
   margin: 0 auto;
   padding-top: 20px;
-  color: #eee;
+  width: 800px;
 }
 
 .img-detail span {
@@ -563,27 +547,23 @@ select {
 }
 
 /* All font-weight in span is bold */
-
 .img-detail span {
   font-weight: bold;
 }
 
 /* Summary */
-
 .img-detail-summary p {
   border-bottom: 1px solid #444;
   padding: 10px 0;
 }
 
 /* Specification */
-
 .img-detail-specification p {
   padding: 2px 0;
   margin: 0;
 }
 
 /* Credit Message */
-
 .img-detail-credit-message {
   padding-bottom: 10px;
   margin-top: 10px;
@@ -596,10 +576,9 @@ select {
 }
 
 /* Image */
-
 .img-detail-image {
-  background-color: #111;
-  text-align: center;
+  padding-top: 5px;
+  text-align: right;
 }
 
 .img-detail-image img {
@@ -607,7 +586,6 @@ select {
 }
 
 /* Table Size */
-
 .img-detail-size td {
   border: 1px solid #444;
   padding: 7px;
@@ -633,19 +611,35 @@ select {
 }
 
 /* Custom Information */
-
 .img-detail-custom {
   padding: 20px 0;
 }
 
 .img-detail-custom textarea,
 .img-detail-custom input {
-  width: 100%;
   background-color: #444;
-  border: none;
-  border-radius: 3px;
+  border: 1px solid #444;
+  border-radius: 0;
+  box-shadow: none;
   color: #aaa;
   overflow: hidden;
+  transition: all 0.35s;
+  width: 100%;
+}
+
+.img-detail-custom input[type="text"] {
+  box-sizing: border-box;
+  height: 36px;
+  line-height: 36px;
+  padding: 0 10px;
+}
+
+.img-detail-custom textarea:focus,
+.img-detail-custom textarea:active,
+.img-detail-custom input:focus,
+.img-detail-custom input:active {
+  box-shadow: none;
+  border: 1px solid #4a911c;
 }
 
 .img-detail-custom label {
@@ -659,11 +653,11 @@ select {
   margin-top: 15px;
 }
 
+
 /************************************************
  * HEADER SECTION
  ************************************************
 */
-
 .ja123rf-header {
   width: 100%;
   background-color: #111;
@@ -672,8 +666,7 @@ select {
 }
 
 /* Logo
-   ==================== */
-
+------- */
 .ja123rf-header .ja123rf-logo {
   float: right;
   padding: 15px;
@@ -704,9 +697,11 @@ select {
   border-right: 1px solid #111;
   border-radius: 0;
   color: #777;
+  font-weight: bold;
+  font-size: 14px;
   margin: 0;
   padding: 19px 15px;
-  font-weight: bold;
+  text-transform: uppercase;
 }
 
 .ja123rf-header .nav-tabs > li > a > img {
@@ -751,7 +746,6 @@ select {
 */
 
 /* Default Style */
-
 .ja123rf-content {
   width: 100%;
   position: absolute;
@@ -813,7 +807,6 @@ select {
  */
 
 /* Default Style */
-
 #downloaded {
   height: 100%;
   background-color: #eee;
@@ -826,10 +819,10 @@ select {
 #ja123rf-downloaded .ja123rf-notice {
   display: block;
   padding: 20px 0 40px 0;
+  border-bottom: 1px solid #eee;
   position: absolute;
   left: 35%;
   top: 45%;
-  border-bottom: 1px solid #eee;
   font-size: 30px;
   font-weight: bold;
   line-height: 0;
@@ -841,13 +834,25 @@ select {
 }
 
 /* Image Downloaded Listing */
-
 #ja123rf-downloaded .img-item img {
   margin: 0 !important; /* override margin from Image List default */
 }
 
-#ja123rf-downloaded .img-item a {
+#ja123rf-downloaded .img-item .item-inner {
   padding: 5px;
+}
+
+#ja123rf-downloaded .img-item .item-inner a {
+  border: 3px solid #eee;
+  transition: all 0.35s;
+}
+
+#ja123rf-downloaded .img-item .item-inner a:hover {
+  border-color: #999;
+}
+
+#ja123rf-downloaded .img-item.active .item-inner a {
+  border-color: #4a911c;
 }
 
 #ja123rf-downloaded .img-item .info {
@@ -856,7 +861,6 @@ select {
 }
 
 /* Image Downloaded Size */
-
 #ja123rf-downloaded .img-item .info .size {
   float: left;
   font-weight: bold;
@@ -868,17 +872,28 @@ select {
   padding-top: 0; /* Override padding for custom information box */
 }
 
+#ja123rf-downloaded .img-detail-custom .btn {
+  background-color: #4a911c;
+  border-radius: 2px;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 10px 20px;
+}
+
+#ja123rf-downloaded .img-detail-custom .btn:hover,
+#ja123rf-downloaded .img-detail-custom .btn:focus,
+#ja123rf-downloaded .img-detail-custom .btn:active {
+  background-color: #418019;
+}
+
 /************************************************
  * SEARCH PAGE
  ************************************************
  */
 
-/* Left Panel
-   ==================== */
 
 /* Control Filter
-   ******************** */
-
+----------------- */
 .form-filter {
   width: 100%;
   height: 100%;
@@ -964,7 +979,6 @@ select {
    ******************** */
 
 /* Default Style */
-
 .ja123rf-search-form {
   width: 100%;
   background-color: #dbdbdb;
@@ -1021,23 +1035,18 @@ select {
 /* Paging */
 
 #ja123rf-search-result .ja123rf-paging {
-  background-color: rgba(0,0,0,0.5);
-  padding: 10px 0;
+  background-color: rgba(0,0,0,0.8);
+  padding: 10px;
   position: absolute;
-  left: 5px;
   right: 22px;
-  bottom: 5px;
+  bottom: 0;
   text-align: right;
   color: #eee;
   z-index: 9999;
 }
 
-#ja123rf-search-result .ja123rf-paging:hover {
-  background-color: #111;
-  transition: background-color 150ms ease;
-}
-
 #ja123rf-search-result .ja123rf-paging input {
+  border-radius: 0;
   width: 40px;
   height: auto;
   border: 0;
@@ -1046,7 +1055,9 @@ select {
 }
 
 #ja123rf-search-result .ja123rf-paging button {
-  margin: 0;
+  background-color: #4a911c;
+  color: #fff;
+  margin: 0 2px;
 }
 
 #ja123rf-search-result .ja123rf-paging span {
@@ -1058,7 +1069,6 @@ select {
 }
 
 /* No Results */
-
 #ja123rf-search-result .no-result {
   width: 100%;
   height: 100%;
@@ -1073,7 +1083,6 @@ select {
 }
 
 /* Images Search Result Listing */
-
 #ja123rf-search-result .img-wrap-container {
   top: 50px; /* Override top to left space for Control Search */
 }
