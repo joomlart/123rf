@@ -36,6 +36,26 @@ class pkg_123rfInstallerScript
      */
     public function postflight($route, JAdapterInstance $adapter)
     {
+        // We only need to perform this if the extension is being installed, not updated
+        if ( $route == 'install' || $route == 'update' )
+        {
+            $db = JFactory::getDbo();
+            $query = $db->getQuery(true);
+
+            $fields = array(
+                $db->quoteName('enabled') . ' = ' . (int) 1
+            );
+
+            $conditions = array(
+                $db->quoteName('element') . ' like ' . $db->quote('%123rf%'),
+                $db->quoteName('type') . ' = ' . $db->quote('plugin')
+            );
+
+            $query->update($db->quoteName('#__extensions'))->set($fields)->where($conditions);
+
+            $db->setQuery($query);
+            $db->execute();
+        }
         return true;
     }
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <extension type="package" version="3.0" method="upgrade">
     <name>123rf Button Package</name>
-    <packagename>123rf_button</packagename>
+    <packagename>123rf</packagename>
     <version>1.0.0</version>
     <url>http://www.123rf.com</url>
     <creationDate>Sep, 2015</creationDate>
@@ -12,6 +12,7 @@
     <author>JoomlArt</author>
     <packager>123rf Button</packager>
     <packagerurl>https://github.com/joomlart/123rf</packagerurl>
+    <scriptfile>pkg_123rf.script.php</scriptfile>
     <description>
 	<![CDATA[
 	 Extend editor allow add image from 123rf.com
