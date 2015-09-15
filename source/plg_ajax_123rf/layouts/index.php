@@ -196,6 +196,11 @@ $imgfolder = JPATH_ROOT . '/' . $plgParams->get('local_save');
                     </script>
                     <script>
                         $(document).ready(function () {
+
+                            var windowWidth = $(document).width();
+
+                            var contentLeft = $("#ja123rf-content-left");
+
                             //Disable filter if the keyword is null
                             $(".form-filter-mask").addClass("active");
                             $("#ja123rf_params_media_type_chzn").addClass("disabled");
@@ -212,51 +217,65 @@ $imgfolder = JPATH_ROOT . '/' . $plgParams->get('local_save');
                                     $("#ja123rf_params_orderby_chzn").removeClass("disabled");
                                 }
                             });
-                            $("#content-left-close").click(function () {
-                                var windowWidth = $(window).width();
-                                var leftPanelWidth = $("#ja123rf-content-left").width();
-                                var transitionProperty = "width 300ms ease";
-                                if (leftPanelWidth > 0) {
-                                    $("#ja123rf-content-left").css({
-                                        width: "0",
-                                        transition: transitionProperty
-                                    });
-                                    $(".control-filter").css({
-                                        width: "0",
-                                        padding: "0"
-                                    });
-                                    $("#ja123rf-content-right").css({
-                                        width: "100%",
-                                        transition: transitionProperty
-                                    });
-                                } else if (windowWidth < 1366) {
-                                    $("#ja123rf-content-left").css({
-                                        width: "18%",
-                                        transition: transitionProperty
-                                    });
-                                    $(".control-filter").css({
-                                        width: "100%",
-                                        padding: "20px"
-                                    });
-                                    $("#ja123rf-content-right").css({
-                                        width: "82%",
-                                        transition: transitionProperty
-                                    });
-                                } else {
-                                    $("#ja123rf-content-left").css({
-                                        width: "15%",
-                                        transition: transitionProperty
-                                    });
-                                    $(".control-filter").css({
-                                        width: "100%",
-                                        padding: "20px"
-                                    });
-                                    $("#ja123rf-content-right").css({
-                                        width: "85%",
-                                        transition: transitionProperty
-                                    });
-                                }
-                            });
+
+                            if (windowWidth < 800) {
+                                contentLeft.css({display: "none"});
+                                $("#content-left-close").click(function () {
+                                    if (contentLeft.is(":hidden")) {
+                                        contentLeft.slideDown();
+                                    } else {
+                                        contentLeft.slideUp();
+                                    }
+                                });
+                            } else {
+                                $("#content-left-close").click(function () {
+                                    var contentLeftWidth = contentLeft.width();
+                                    var transitionProperty = "width 300ms ease";
+                                    if (contentLeftWidth > 0) {
+                                        $("#ja123rf-content-left").css({
+                                            width: "0",
+                                            transition: transitionProperty
+                                        });
+                                        $(".control-filter").css({
+                                            width: "0",
+                                            padding: "0"
+                                        });
+                                        $("#ja123rf-content-right").css({
+                                            width: "100%",
+                                            transition: transitionProperty
+                                        });
+                                    } else if (windowWidth < 1366) {
+                                        $("#ja123rf-content-left").css({
+                                            width: "18%",
+                                            transition: transitionProperty
+                                        });
+                                        $(".control-filter").css({
+                                            width: "100%",
+                                            padding: "20px"
+                                        });
+                                        $("#ja123rf-content-right").css({
+                                            width: "82%",
+                                            transition: transitionProperty
+                                        });
+                                    } else {
+                                        $("#ja123rf-content-left").css({
+                                            width: "15%",
+                                            transition: transitionProperty
+                                        });
+                                        $(".control-filter").css({
+                                            width: "100%",
+                                            padding: "20px"
+                                        });
+                                        $("#ja123rf-content-right").css({
+                                            width: "85%",
+                                            transition: transitionProperty
+                                        });
+                                    }
+                                });
+                            }
+                            if(windowWidth < 650) {
+                                $(".ja123rf-content-right  .control-group").first().css({width: "16%"});
+                            }
                         })
                     </script>
                 </div>

@@ -1099,3 +1099,41 @@ select {
   top: 50px; /* Override top to left space for Control Search */
 }
 
+/************************************************
+ * MISC
+ ************************************************
+ */
+
+@media only screen and (max-width: 800px) {
+  .ja123rf-content-left {
+    width: 100% !important;
+    height: 45% !important;
+  }
+
+  .ja123rf-content-left .control-filter .control-group:last-child {
+    width: 35%;
+  }
+
+  .control-filter .control-group {
+    float: left;
+    margin-right: 20px;
+    width: 20%;
+  }
+
+  .ja123rf-content-right {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .ja123rf-content-right .control-search .control-group:last-child {
+    margin: 0 !important;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .ja123rf-content-left {
+    width: 100% !important;
+    height: 55% !important;
+  }
+
+}
