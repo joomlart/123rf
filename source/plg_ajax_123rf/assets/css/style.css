@@ -826,11 +826,14 @@ select {
 #ja123rf-downloaded .ja123rf-notice {
   display: block;
   padding: 20px 0 40px 0;
+  position: absolute;
+  left: 35%;
+  top: 45%;
   border-bottom: 1px solid #eee;
-  font-size: 18px;
+  font-size: 30px;
   font-weight: bold;
   line-height: 0;
-  color: red;
+  color: #999;
 }
 
 #ja123rf-downloaded #ja123rf-insert {
