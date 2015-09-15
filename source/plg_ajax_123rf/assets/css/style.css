@@ -71,6 +71,16 @@ select {
   text-transform: uppercase;
 }
 
+/* Error */
+.error {
+  height: 100%;
+  text-align: center;
+}
+
+.error h2 {
+  padding-top: 50px;
+}
+
 .tiff {
   background-color: #47a508;
 }
@@ -78,6 +88,8 @@ select {
 .jpg {
   background-color: #0094c5;
 }
+
+
 
 /* Button */
 .btn-hide {

@@ -119,7 +119,7 @@ if ($custData['stat'] == 'ok') :
                         </div>
                         <div class="img-detail-download">
                           <input id="ja123rf-download-url" type="hidden" value="" />
-                          <button id="ja123rf-download" class="img-download btn btn-danger btn-large" onclick="getPhotos($(this).attr('href'));" href="#">Download</a>
+                          <button id="ja123rf-download" class="img-download btn btn-danger btn-large" onclick="getPhotos($(this).attr('href'));" href="#">Download</button>
                         </div>
                     </div>
                  </div>
@@ -192,7 +192,7 @@ if ($custData['stat'] == 'ok') :
                 }
             </script>
         <?php else : ?>
-            <div id="ja123rf-image-detail" class="img-image-detail">
+            <div id="ja123rf-image-detail" class="img-detail error">
                 <div class="img-detail-inner clearfix">
                     <h2><?php echo $data->err; ?>!</h2>
                 </div>
@@ -200,11 +200,13 @@ if ($custData['stat'] == 'ok') :
         <?php endif; ?>
     <?php endif; ?>
 <?php else : ?>
-    <div>
     <?php if (preg_match('/signature/', $custData->err)) : ?>
         <h2>Invalid Secret Key</h2>
     <?php else : ?>
-        <h2><?php echo $custData->err; ?></h2>
+        <div id="ja123rf-image-detail" class="img-detail error">
+            <div class="img-detail-inner clearfix">
+                <h2><?php echo $custData->err; ?></h2>
+            </div>
+        </div>
     <?php endif; ?>
-    </div>
 <?php endif; ?>
