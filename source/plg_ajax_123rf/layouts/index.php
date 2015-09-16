@@ -81,6 +81,7 @@ $imgfolder = JPATH_ROOT . '/' . $plgParams->get('local_save');
                                         <div id="ja123rf-image-<?php echo $imgname ?>" class="img-item">
                                             <a href="#" title="<?php echo $imgName; ?>">
                                                 <img src="<?php echo $imglink . '/' . $image; ?>"/>
+
                                                 <div class="info clearfix">
                                                     <span class="size"><?php echo($imgWidth . ' x ' . $imgHeight . ' px') ?></span>
                                                     <span class="type <?php echo($imgType) ?>"><?php echo($imgType) ?></span>
@@ -197,26 +198,37 @@ $imgfolder = JPATH_ROOT . '/' . $plgParams->get('local_save');
                     <script>
                         $(document).ready(function () {
 
-                            var windowWidth = $(document).width();
-
-                            var contentLeft = $("#ja123rf-content-left");
-
                             //Disable filter if the keyword is null
                             $(".form-filter-mask").addClass("active");
-                            $("#ja123rf_params_media_type_chzn").addClass("disabled");
-                            $("#ja123rf_params_orderby_chzn").addClass("disabled");
+
+                            var mediaTypeId = $("#ja123rf_params_media_type_chzn");
+                            var orderById = $("#ja123rf_params_orderby_chzn");
+
+                            mediaTypeId.addClass("disabled");
+                            orderById.addClass("disabled");
+
+                            mediaTypeId.find("div.chzn-drop").hide();
+                            orderById.find("div.chzn-drop").hide();
+
                             $("#ja123rf_params_keyword").keyup(function (event) {
                                 var inputValue = $('#ja123rf_params_keyword').val();
                                 if (inputValue === "") {
                                     $(".form-filter-mask").addClass("active");
-                                    $("#ja123rf_params_media_type_chzn").addClass("disabled");
-                                    $("#ja123rf_params_orderby_chzn").addClass("disabled");
+                                    mediaTypeId.addClass("disabled");
+                                    orderById.addClass("disabled");
+                                    mediaTypeId.find("div.chzn-drop").hide();
+                                    orderById.find("div.chzn-drop").hide();
                                 } else {
                                     $(".form-filter-mask").removeClass("active");
-                                    $("#ja123rf_params_media_type_chzn").removeClass("disabled");
-                                    $("#ja123rf_params_orderby_chzn").removeClass("disabled");
+                                    mediaTypeId.removeClass("disabled");
+                                    orderById.removeClass("disabled");
+                                    mediaTypeId.find("div.chzn-drop").show();
+                                    orderById.find("div.chzn-drop").show();
                                 }
                             });
+
+                            var windowWidth = $(document).width();
+                            var contentLeft = $("#ja123rf-content-left");
 
                             if (windowWidth < 800) {
                                 contentLeft.css({display: "none"});
@@ -273,7 +285,7 @@ $imgfolder = JPATH_ROOT . '/' . $plgParams->get('local_save');
                                     }
                                 });
                             }
-                            if(windowWidth < 650) {
+                            if (windowWidth < 650) {
                                 $(".ja123rf-content-right  .control-group").first().css({width: "16%"});
                             }
                         })
@@ -310,7 +322,7 @@ $imgfolder = JPATH_ROOT . '/' . $plgParams->get('local_save');
     });
     $(document).ready(function () {
         $("input[name^='ja123rf-params-']").change(function () {
-                ja123rf_search();
+            ja123rf_search();
         });
 
         document.getElementById("ja123rf-search-form").onsubmit = function () {
@@ -318,7 +330,7 @@ $imgfolder = JPATH_ROOT . '/' . $plgParams->get('local_save');
         };
 
         $("#btn-search").on('click', function () {
-            if ($("#ja123rf_params_keyword").val() ==="") {
+            if ($("#ja123rf_params_keyword").val() === "") {
                 alert('You must enter keyword to search images');
             } else {
                 var params = ja123rf_getParams();
@@ -392,9 +404,9 @@ $imgfolder = JPATH_ROOT . '/' . $plgParams->get('local_save');
         var tag = $("#ja123rf-search-result");
         var url = '<?php echo JUri::base(true) ?>/index.php?option=com_ajax&plugin=123rf&view=search&format=html';
         var keyup = $("#ja123rf_params_keyword").val();
-        if(keyup === ""){
+        if (keyup === "") {
             alert("Please insert keyword to search images!");
-        }else {
+        } else {
             ja123rf_sendAjax('POST', url, params, tag);
         }
     }

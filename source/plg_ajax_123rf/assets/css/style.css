@@ -351,11 +351,6 @@ select {
   display: none;
 }
 
-/* Bootstrap Disabled */
-.disabled {
-  background-color: #aaa !important;
-}
-
 /* Chosen Dropdown */
 .chzn-container .chzn-single {
   width: 100px;
@@ -367,6 +362,18 @@ select {
   border-radius: 3px;
   font-size: 13px;
   color: #666;
+}
+
+.chzn-container.disabled .chzn-single {
+  width: 100px;
+  border-radius: 3px;
+  background: #aaa;
+}
+
+.chzn-container-active.disabled.chzn-with-drop .chzn-single {
+  width: 100px;
+  background: #aaa;
+  border-radius: 3px;
 }
 
 .chzn-container-active.chzn-with-drop .chzn-single {
