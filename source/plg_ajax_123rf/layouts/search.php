@@ -34,7 +34,7 @@ if ($apikey && $apikey != '') :
             <div class="ja123rf-paging">
                 <button id="btnprev"  class="btn btn-info" onclick="ja123rf_prevPage(); return false;">Prev</button>
                 <button id="btnnext"  class="btn btn-info" onclick="ja123rf_nextPage(); return false;">Next</button>
-                <span>Go to</span><input id="current-page" size="10" type="text" onchange="gotoPage(); return false;" value="<?php echo $current; ?>"/> <span>of <?php echo $pages; ?></span>;
+                <span>Go to</span><input id="current-page" size="10" type="text" onchange="gotoPage(); return false;" value="<?php echo $current; ?>"/> <span>of <?php echo $pages; ?></span>
             </div>
 
             <div class="img-wrap-container">

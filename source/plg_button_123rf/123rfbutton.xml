@@ -15,7 +15,8 @@
 	</description>
 	<files>
 		<filename plugin="123rfbutton">123rfbutton.php</filename>
-    <folder>assets</folder>
+        <folder>elements</folder>
+        <folder>assets</folder>
 		<filename>index.html</filename>
 	</files>
 
@@ -25,7 +26,7 @@
 	</languages>
 
     <config>
-        <fields name="params">
+        <fields name="params" addfieldpath="plugins/editors-xtd/123rfbutton/elements">
             <fieldset name="basic">
                 <field name="apikey"
                     type="password"
@@ -47,6 +48,11 @@
                     default=""
                     label="PLG_JA_123RF_ACCESSKEY"
                     description="PLG_JA_123RF_ACCESSKEY_DESC" />
+                <field name="123rf_check"
+                    type="credits"
+                    readonly="true"
+                    label="PLG_JA_123RF_CHECK"
+                    description="PLG_JA_123RF_CHECK_DESC" />
                 <field name="local_save"
                     type="text"
                     default="images/ja123rf"
